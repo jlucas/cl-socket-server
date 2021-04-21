@@ -46,4 +46,6 @@
   (let ((server-thread (find *server-socket-name* (bt:all-threads)
                              :key #'bt:thread-name :test #'equal)))
     (bt:interrupt-thread server-thread
-                         (lambda () (signal 'shutting-down)))))
+                         (lambda ()
+                           (signal 'shutting-down)))
+    (bt:destroy-thread server-thread)))
