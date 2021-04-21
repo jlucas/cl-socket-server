@@ -1,6 +1,6 @@
 # Based on:
 # http://3bb.cc/blog/2020/09/11/github-ci/
-name: cl-socket-server tests
+name: ci
 on:
   - push
 jobs:
