@@ -1,3 +1,5 @@
+![CI](https://github.com/jlucas/cl-socket-server/workflows/CI/badge.svg?branch=master)
+
 # cl-socket-server
 
 This package implements a very simple chat server based on example
