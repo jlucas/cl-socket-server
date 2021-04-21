@@ -1,4 +1,4 @@
-![CI](https://github.com/jlucas/cl-socket-server/workflows/CI/badge.svg?branch=master)
+![CI](https://github.com/jlucas/cl-socket-server/workflows/ci/badge.svg?branch=master)
 
 # cl-socket-server
 
