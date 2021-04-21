@@ -5,6 +5,8 @@
 
 (defparameter *port* 9001)
 
+(defparameter *server-socket-name* "SOCKET-PROCESSOR")
+
 (define-condition shutting-down (condition) ())
 
 (defun socket-processor ()
@@ -38,10 +40,10 @@
           (mapcar #'usocket:socket-close sockets))))))
 
 (defun start-server ()
-  (bt:make-thread #'socket-processor :name "SOCKET-PROCESSOR"))
+  (bt:make-thread #'socket-processor :name *server-socket-name*))
 
 (defun stop-server ()
-  (let ((server-thread (find "SOCKET-PROCESSOR" (bt:all-threads)
+  (let ((server-thread (find *server-socket-name* (bt:all-threads)
                              :key #'bt:thread-name :test #'equal)))
     (bt:interrupt-thread server-thread
                          (lambda () (signal 'shutting-down)))))
